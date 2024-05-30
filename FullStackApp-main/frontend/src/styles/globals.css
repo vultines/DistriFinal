@@ -1,0 +1,1182 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  background-color: #ffffff;
+  width: 100%;
+  height: 100%;
+  padding-top: 0%;
+}
+
+.mainContainer{
+  background-color: #6200c0;
+  width: 100%;
+  margin-top:0;
+  height: auto;
+  flex-direction: column;
+  align-items: center;
+}
+
+.topContainer{
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #6200c0;
+  z-index: 1;
+  padding: 15px;
+  height: 90px;
+}
+
+.navigationSection{
+  width: 100%;
+  height: 55px;
+  background-color: transparent;
+  flex-direction: row;
+  justify-content: end;
+  text-align: center;
+  padding: 0px;
+  margin-bottom: 50px;
+}
+
+.logoSection{
+  flex-direction: row;
+  width: 30%;
+  height: 55px;
+  background-color: transparent;
+  align-items: center;
+  color: white;
+  text-align:center ;
+  float: left;
+  font-family: 'Century Gothic', sans-serif;
+  font-weight: 600;
+}
+
+.logo{
+  width: 100%;
+  height: 70px;
+  background-color: transparent;
+  margin-left: 50%;
+}
+
+.logoTitle{
+  width: 100%;
+  height: 50px;
+  text-align: left;
+  align-items: center;
+  justify-content:end;
+  background-color: transparent;
+}
+
+.linkSection{
+  height: auto;
+  padding: 5px;
+  background-color: transparent;
+  align-items: end;
+  text-align: center;
+  font-family: 'Century Gothic', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: white;
+  align-items: center;
+}
+
+.navLinks{
+  width: auto;
+  height: auto;
+  margin-left: 15px;
+  flex-direction: row;
+  text-align: center;
+  background-color: transparent;
+  color: white;
+}
+
+.navLinks.circleBehind a:before, .navLinks.circleBehind a:after
+{
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    border: 3px solid #fe7d5688;
+    transform: translateX(-50%) translateY(-50%) scale(0.5);
+    border-radius: 50%;
+    background: transparent;
+    content: "";
+    opacity: 0;
+    transition: all 0.3s;
+    z-index: -1;
+}
+
+.navLinks.circleBehind a:after
+{
+    border-width: 2px;
+    transition: all 0.4s;
+}
+
+.navLinks.circleBehind a:hover:before
+{
+    opacity: 1;
+    transform: translateX(-50%) translateY(-50%) scale(1);
+}
+
+.navLinks.circleBehind a:hover:after
+{
+    opacity: 1;
+    transform: translateX(-50%) translateY(-50%) scale(1.3);
+}
+
+.welcomeSection{
+  width: 100%;
+  height: auto;
+  margin-top: 4%;
+  padding: 80px;
+  background-color: transparent;
+  flex-direction: row;
+}
+
+.greeting{
+  width: 200px;
+  height: auto;
+  padding: 10px;
+  background-color: #6D13C7;
+  border-radius: 15px;
+  color: white;
+  font-family: 'Century Gothic', sans-serif;
+  text-align: center;
+  font-weight: 500;
+}
+
+.titleSection{
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.title{
+  color: white;
+  font-family: 'Century Gothic', sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.tDescription{
+  color: white;
+  font-family: 'Century Gothic', sans-serif;
+  font-size: 15px;
+  font-weight: 100;
+}
+
+.photoSection{
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+  align-self: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.bottomSection{
+  width: 70px;
+  height: 70px;
+  padding: 0px;
+  background-color: transparent;
+  border-radius: 50%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+/*About Us Section CSS*/
+
+.aboutMainContainer{
+  width:100%;
+  height:550px;
+  padding: 20px;
+  background-color: #fff;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+
+.aboutTitle{
+  width: 100%;
+  height: 90px;
+  padding: 5px;
+  background-color: transparent;
+  font-family: 'Century Gothic', sans-serif;
+  font-weight: 700;
+  font-size: 50px;
+  color:#FE7C56
+
+}
+
+.aboutSubContainer{
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  background-color: transparent;
+  flex-direction: row;
+  float: left;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  font-family: 'Century Gothic', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.aboutDesc{
+  width: 60%;
+  text-align: center;
+  height: auto;
+  padding: 40px;
+  background-color: #FE7C56;
+  border-radius: 10px;
+  color: white;
+  font-weight: 500;
+}
+
+/*Home Slider CSS*/
+
+.sliderContainer{
+  width: 100%;
+  height: auto;
+  padding: 0px;
+  background-color: transparent;
+}
+
+
+.carousel {
+  width: 100%;
+  height: auto;
+  padding: 0px;
+  background-color: transparent;
+  position: relative;
+  object-fit: cover;
+}
+
+.carousel-inner {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 450px;
+}
+
+.carousel-open:checked + .carousel-item {
+  position: static;
+  opacity: 100;
+}
+
+.carousel-item {
+  position: absolute;
+  opacity: 0;
+  -webkit-transition: opacity 0.6s ease-out;
+  transition: opacity 0.6s ease-out;
+}
+
+.carousel-item img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+.carousel-control {
+  background: rgba(0, 0, 0, 0.28);
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+  font-size: 40px;
+  height: 40px;
+  line-height: 35px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+  cursor: pointer;
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  text-align: center;
+  width: 40px;
+  z-index: 10;
+}
+
+.carousel-control.prev {
+  left: 2%;
+}
+
+.carousel-control.next {
+  right: 2%;
+}
+
+.carousel-control:hover {
+  background: rgba(0, 0, 0, 0.8);
+  color: #aaaaaa;
+}
+
+#carousel-1:checked ~ .control-1,
+#carousel-2:checked ~ .control-2,
+#carousel-3:checked ~ .control-3 {
+  display: block;
+}
+
+.carousel-indicators {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  bottom: 2%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 10;
+}
+
+.carousel-indicators li {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.carousel-bullet {
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-size: 35px;
+}
+
+.carousel-bullet:hover {
+  color: #aaaaaa;
+}
+
+#carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
+#carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
+#carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
+  color: #FE7C56;
+}
+
+
+/*hola uwu*/
+
+/*Footer Section CSS*/
+
+.footer{
+  position: -webkit-sticky;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 200px;
+  background-color: #FE7C56;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px;
+  color: #fff;
+  font-family: 'Century Gothic', sans-serif;
+}
+
+.footerTitle{
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  font-family: 'Century Gothic', sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.copyrightContainer{
+  width: 100%;
+  height: auto;
+  padding:10px;
+  background-color: transparent;
+  font-family: 'Century Gothic', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+/*css for registration forms*/
+
+.mainFormContainer{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  padding: 100px;
+}
+
+.formSubContainer{
+  width: 990px;
+  height: auto;
+  background-color: transparent;
+  padding: 45px;
+  margin: 0 auto;
+  margin-top: -45px;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.formTitle{
+  width: 100%;
+  height: 300px;
+  border-radius: 20px 20px 20px 20px;
+  background-image: url('/images/teachers1.jpg');
+  background-size: cover;
+  background-position: center;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+}
+
+.formTitleC{
+  width: 100%;
+  height: 300px;
+  border-radius: 20px 20px 20px 20px;
+  background-image: url('/images/centro1.jpg');
+  background-size: cover;
+  background-position: center;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+}
+
+.formTitleTT{
+  width: 100%;
+  height: 300px;
+  border-radius: 20px 20px 20px 20px;
+  background-image: url('/images/tutor1.jpg');
+  background-size: cover;
+  background-position: center;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+}
+
+
+
+.formssubTitle{
+  width: 100%;
+  height: auto;
+  font-family: 'Century Gothic', sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+  color: white;
+  margin: 0 auto;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.picContainer{
+  position: fixed;
+  width: 880px;
+  height: 280px;
+  background-color: #fe7d5685;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.picContainerC{
+  position: fixed;
+  width: 1040px;
+  height: 280px;
+  background-color: #fe7d5685;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.picContainerTT{
+  position: fixed;
+  width: 880px;
+  height: 280px;
+  background-color: #70d2f063;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.formMargins{
+  width: 100%;
+  height: auto;
+  background-color: white;
+  border-radius: 0px 0px 20px 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.circlesConatiner{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 980px;
+  height: 100%;
+  z-index: -1;
+}
+
+.big--circle {
+  width: 2800px;
+  height: 2800px;
+  border-radius: 50%;
+  border: 5px dashed #6200c0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  float: right;
+  position: relative;
+  animation: follow linear 30s infinite;
+}
+
+.big--circle-content {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #70D2F0;
+  top: -50px;
+  bottom: 0;
+}
+
+.big--circle-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.mid--circle {
+  width: 2400px;
+  height: 2400px;
+  border-radius: 50%;
+  border: 5px dashed #70D2F0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: follow linear 45s infinite;
+}
+
+.mid--circle-content {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #6200c0;
+  top: -35px;
+  bottom: 0;
+}
+
+.mid--circle-image {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+.small--circle {
+  width: 2000px;
+  height: 2000px;
+  border-radius: 50%;
+  border: 5px dashed #6200c0;
+  animation: follow linear 60s infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.small--circle-content {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #70D2F0;
+  top: -25px;
+  bottom: 0;
+}
+
+.small--circle-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+@keyframes follow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes follow-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+/*CSS for datatables*/
+
+.tableContainer{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  padding: 100px;
+}
+
+.secTableContainer{
+  width: 900px;
+  height: auto;
+  margin: 0px auto;
+  background-color: transparent;
+  padding:30px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.theadCont{
+  background-color: #6200c0;
+  color: white;
+  font-family: 'Century Gothic', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  padding:10px;
+  height: 90px;
+  width: auto;
+}
+
+.dataTitle{
+  width: auto;
+  height: auto;
+  font-family: 'Century Gothic', sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+  color: #FE7C56;
+  background-color: transparent;
+}
+
+.tbodyCont{
+  background-color: #fff;
+  color: #6200c0;
+  font-family: 'Century Gothic', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  padding:20px;
+  height: 300px;
+  width: auto;
+  text-align: center;
+  justify-content: center;
+}
+.dataTable{
+  width: 100%;
+}
+
+.actionIcon{
+  color: #FE7C56;
+  font-size: 20px;
+}
+
+.circlesConatinerDT{
+  position: fixed;
+  top: -25%;
+  right: -90%;
+  width: 980px;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.7;
+}
+
+.big--circleDT {
+  width: 2800px;
+  height: 2800px;
+  border-radius: 50%;
+  border: 5px dashed #FE7C56;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  float: right;
+  position: relative;
+  animation: follow linear 30s infinite;
+}
+
+.big--circle-contentDT {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #B2D93A;
+  top: -50px;
+  bottom: 0;
+}
+
+.big--circle-imageDT {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.mid--circleDT {
+  width: 2400px;
+  height: 2400px;
+  border-radius: 50%;
+  border: 5px dashed #B2D93A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: follow linear 45s infinite;
+}
+
+.mid--circle-contentDT {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #FE7C56;
+  top: -35px;
+  bottom: 0;
+}
+
+.mid--circle-imageDT {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+.small--circleDT {
+  width: 2000px;
+  height: 2000px;
+  border-radius: 50%;
+  border: 5px dashed #FE7C56;
+  animation: follow linear 60s infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.small--circle-contentDT {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #B2D93A;
+  top: -25px;
+  bottom: 0;
+}
+
+.small--circle-imageDT {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+@keyframes follow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes follow-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+
+/*Css for Stablishments forms*/
+
+.sFormContainer{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  padding: 90px;
+}
+
+/*css for map container*/
+
+.mainMapContainer{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #6200c0;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  padding: 90px;
+}
+
+.secondMapCont{
+  width: 780px;
+  height: 650px;
+  padding: 5px;
+  margin: 0 auto;
+  background-color: transparent;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+
+
+.mapFormTitle{
+  width: 100%;
+  height: auto;
+  background-color: #6200c0;
+  border-radius: 20px 20px 0px 0px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  font-family: 'Century Gothic', sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: white;
+}
+
+/*Modal Container css*/
+
+.mainModalArea{
+  width: 700px;
+  height: auto;
+  padding: 10px;
+  background-color: #6200c0;
+}
+
+.modalContainer{
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+  text-overflow: clip;
+
+}	
+/*PopUp slider Css*/
+
+
+/*icons css*/
+
+.icon{
+  width: 20px;
+  height: 20px;
+  flex-direction: row;
+  margin-right: 5px;
+}
+
+.formContainer {
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  padding-left: 25%;
+  padding-right: 25%;
+  padding-top: 10%;
+}
+
+
+
+/*LogIn CSS*/
+
+.loginMainContainer{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #6200c0;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  padding: 50px;
+}
+
+.loginSecondContainer{
+  position: fixed;
+  width: 780px;
+  height: auto;
+  padding: 45px;
+  margin: 0 auto;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.PicContainer{
+  width: 60%;
+  height: auto;
+  background-color: transparent;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  padding: 30px;
+  border-radius: 0px 20px 20px 0px;
+  background-image: url('/images/prek-teacher3.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.loginTitle{
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  background-color: transparent;
+  margin-top: 60%;
+  margin-bottom: 10px;
+  color: #6200c0;
+  font-family: 'Century Gothic', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.loginContainer{
+  width: 40%;
+  height: 700px;
+  background-color: white;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  border-radius: 20px;
+}
+
+.logInSubContainer{
+  width: 100%;
+  height: auto;
+  margin-top: 40px;
+  background-color: transparent;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  padding: 5px;
+  
+}
+
+.loginPicContainer{
+  width: 60%;
+  height: 650px;
+  background-color: transparent;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  padding: 30px;
+  border-radius: 0px 20px 20px 0px;
+  background-image: url('/images/prek-teacher3.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.loginPicBox{
+  width: 100%;
+  height: 100%;
+  background-color: #fe7d5671;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  font-family: 'Century Gothic', sans-serif;
+  color: white;
+  font-size: 60px;
+  font-weight: bold;
+}
+
+/*Circle Orbit animation*/
+
+#circle-orbit-container {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  height: 900px;
+  width: 900px;
+  z-index: -1;
+}
+
+#inner-orbit {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  width: 800px;
+  height: 800px;
+  border: 2px white dashed;
+  border-radius: 100%;
+  -webkit-animation: spin-right 20s linear infinite;
+  animation: spin-right 30s linear infinite;
+}
+
+.inner-orbit-cirlces {
+  position: absolute;
+  top: 20px;
+  left: 250px;
+  height: 10px;
+  width: 10px;
+  border-radius: 100%;
+  background-color: #70D2F0;
+}
+
+#middle-orbit {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  width: 850px;
+  height: 850px;
+  border: 2px white dashed;
+  border-radius: 100%;
+  -webkit-animation: spin-right 20s linear infinite;
+  animation: spin-right 40s linear infinite;
+}
+
+.middle-orbit-cirlces {
+  position: absolute;
+  top: -5px;
+  left: 350px;
+  height: 20px;
+  width: 20px;
+  border-radius: 100%;
+  background-color: #B2D93A;
+}
+
+#outer-orbit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 900px;
+  height: 900px;
+  border: 2px white dashed;
+  border-radius: 100%;
+  -webkit-animation: spin-right 30s linear infinite;
+  animation: spin-right 50s linear infinite;
+  
+}
+
+.outer-orbit-cirlces {
+  position: absolute;
+  top: -17px;
+  left: 450px;
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  background-color: #FE7C56;
+}
+
+/* Circle Animation */
+@keyframes spin-right {
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+/*Card Complain CSS*/
+
+.cardSubContainer{
+  width: 950px;
+  height: auto;
+  background-color: transparent;
+  padding: 45px;
+  margin: 0 auto;
+  margin-top: 0;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.formTitleCM{
+  width: 100%;
+  height: 300px;
+  border-radius: 20px 20px 20px 20px;
+  background-image: url('/images/prek-teacher.jpg');
+  background-size: cover;
+  background-position: center;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+}
+
+.picContainerCM{
+  position: fixed;
+  width: 840px;
+  height: 280px;
+  background-color: #fe7d5685;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
