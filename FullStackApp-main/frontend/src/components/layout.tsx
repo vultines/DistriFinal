@@ -43,7 +43,7 @@ export default function NavBar( {children}:any) {
                 <div className="dv">
                   <li className="navLinks flex flex-column circleBehind">
                     <img className="icon" src="/images/complaint.png"></img>
-                    <Link color={'inherit'} href="/complaints">Complaints</Link>
+                    <Link color={'inherit'} href="/chatsupport">Chat</Link>
                   </li>
                 </div>
 

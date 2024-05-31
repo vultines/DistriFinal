@@ -80,13 +80,14 @@ WSGI_APPLICATION = 'django_api.wsgi.application'
 DATABASES = {
    'default': {
         # MySQL engine. Powered by the mysqlclient module.
-        'ENGINE': 'YOUR DATABASE ENGINE',
-        'NAME': 'YOUR DATABASE NAME',
-        'USER': 'YOUR USERNAME',
-        'PASSWORD': 'YOUR DATABASE PASSWORD',
-        'HOST': 'YOUR DATABASE HOST',
-        'PORT': 'YOUR ALLOWED PORTS FOR THE DATABASE',
-        'ATOMIC_REQUESTS': True,
+        'ENGINE':'mssql',
+        'NAME':'fiscanuevo',
+        'USER':'sa',        
+        'PASSWORD':'Passwordhereyo1!',
+        'HOST':'LUNA\FISCALIA',  
+        'OPTIONS': {
+            'driver': 'ODBC Driver 17 for SQL Server',
+        },
     }
 }
 

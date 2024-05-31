@@ -48,9 +48,9 @@ class class_group(models.Model):
     classroom = models.CharField(max_length=50)
     employee_id = models.ForeignKey(employee, on_delete=models.CASCADE)
     numberOfChildren = models.IntegerField()
-    status = models.IntegerField(default=1)
-    user = models.IntegerField()
-    
+    class_group_status = models.IntegerField(default=1)
+    class_user = models.IntegerField()
+
     def __str__(self):
         return self.name
 
@@ -64,7 +64,7 @@ class stablishments(models.Model):
     latitude = models.FloatField()
     longitude = models.FloatField()
     status = models.IntegerField(default=1)
-    
+
     def __str__(self):
         return self.name
 
@@ -75,7 +75,7 @@ class child(models.Model):
     class_group_id = models.ForeignKey(class_group, on_delete=models.CASCADE)
     schedule_id = models.ForeignKey(schedule, on_delete=models.CASCADE)
     status = models.IntegerField(default=1)
-    
+
     def __str__(self):
         return self.unique_code
 
@@ -84,8 +84,8 @@ class tutor_child(models.Model):
     tutor_id = models.ForeignKey(tutor, on_delete=models.CASCADE)
     child_id = models.ForeignKey(child, on_delete=models.CASCADE)
     status = models.IntegerField(default=1)
-    user = models.IntegerField()
-    
+    tutor_user = models.IntegerField()
+
     def __str__(self):
         return self.tutor_id.name
 
@@ -98,7 +98,7 @@ class announcements(models.Model):
     end_date = models.DateField()
     multimedia = models.CharField(max_length=100)
     status = models.IntegerField(default=1)
-    
+
     def __str__(self):
         return self.title
 
@@ -109,6 +109,6 @@ class complaint(models.Model):
     stablishments_id = models.ForeignKey(stablishments, on_delete=models.CASCADE)
     type = models.CharField(max_length=50)
     status = models.IntegerField(default=1)
-    
+
     def __str__(self):
         return self.type
