@@ -11,7 +11,7 @@ class tutor(models.Model):
     secondLastName = models.CharField(max_length=60,blank=True, null=True)
     phone = models.IntegerField(default=0)
     email = models.CharField(max_length=50, default=0)
-    password = models.CharField(max_length=16, default=0)
+    password = models.CharField(max_length=160, default=0)
     ci = models.CharField(max_length=20, default=0)
     status = models.IntegerField(default=1)
     def __str__(self):
@@ -35,7 +35,7 @@ class employee(models.Model):
     secondLastName = models.CharField(max_length=60,blank=True, null=True)
     phone = models.IntegerField(default=0)
     email = models.CharField(max_length=50, default=0)
-    password = models.CharField(max_length=16, default=0)
+    password = models.CharField(max_length=160, default=0)
     ci = models.CharField(max_length=20, default=0)
     schedule_id = models.ForeignKey(schedule, on_delete=models.CASCADE)
     status = models.IntegerField(default=1)

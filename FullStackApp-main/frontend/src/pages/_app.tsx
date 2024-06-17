@@ -4,6 +4,7 @@ import Footer from '@/components/footer'
 import '@/styles/globals.css'
 import { useRouter } from 'next/router'
 import { useState } from 'react';
+import { UserProvider } from '@auth0/nextjs-auth0/client';
 
 import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
 

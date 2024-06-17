@@ -1,4 +1,3 @@
-// Chat.js
 import React, { useEffect, useState } from 'react';
 import io from 'socket.io-client';
 
@@ -6,7 +5,8 @@ const Chat = () => {
     const [messages, setMessages] = useState([]);
     const [inputMessage, setInputMessage] = useState('');
     const [socket, setSocket] = useState(null);
-    const [userCount, setUserCount] = useState(0); // Variable de estado para el número de usuarios
+    const [userCount, setUserCount] = useState(0);
+    const [users, setUsers] = useState([]);
 
     useEffect(() => {
         const newSocket = io('http://localhost:4000');
@@ -14,6 +14,9 @@ const Chat = () => {
 
         newSocket.on('connect', () => {
             console.log('Conectado al servidor de sockets');
+            const newUser = `Usuario ${userCount + 1}`;
+            setUsers((prevUsers) => [...prevUsers, newUser]);
+            setUserCount((prevCount) => prevCount + 1);
         });
 
         newSocket.on('disconnect', () => {
@@ -22,26 +25,34 @@ const Chat = () => {
 
         newSocket.on('chat message', (msg) => {
             console.log(`Mensaje recibido: ${msg}`);
-            setMessages((prevMessages) => [...prevMessages, msg]);
+            setMessages((prevMessages) => {
+                // Verificar si el último mensaje es igual al mensaje que se está recibiendo
+                if (prevMessages[prevMessages.length - 1] !== msg) {
+                    return [...prevMessages, msg];
+                } else {
+                    return prevMessages;
+                }
+            });
         });
 
-        newSocket.on('user count', (count) => { // Escuchar el evento de número de usuarios
+        newSocket.on('user count', (count) => {
             setUserCount(count);
         });
-
-        return () => {
-            newSocket.disconnect();
-        };
     }, []);
 
     const handleMessageSubmit = (e) => {
         e.preventDefault();
-        socket.emit('chat message', inputMessage);
-        setInputMessage('');
+        if (inputMessage.trim() !== '') {
+            socket.emit('chat message', inputMessage);
+            setInputMessage('');
+        }
     };
 
     return (
         <div style={{ display: 'flex', flexDirection: 'column', height: '100vh', padding: '90px' }}>
+            {users.map((user, index) => (
+                <p key={index}>{user} se ha conectado</p>
+            ))}
             <div style={{ flex: 1, overflowY: 'scroll', marginBottom: '20px' }}>
                 <ul style={{ listStyleType: 'none', padding: 0 }}>
                     {messages.map((msg, index) => (

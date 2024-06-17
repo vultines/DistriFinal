@@ -1,15 +1,35 @@
 from rest_framework import serializers
 from .models import tutor, employee, child, tutor_child, class_group, stablishments, schedule, complaint, announcements
 
+from django.contrib.auth.hashers import make_password
+
 class tutorSerializer(serializers.ModelSerializer):
     class Meta:
         model = tutor
         fields = '__all__'
 
+    def create(self, validated_data):
+        password = validated_data.pop('password', None)
+        instance = self.Meta.model(**validated_data)
+        if password is not None:
+            instance.password = make_password(password)
+        instance.save()
+        return instance
+
+
 class employeeSerializer(serializers.ModelSerializer):
     class Meta:
         model = employee
         fields = '__all__'
+
+    def create(self, validated_data):
+        password = validated_data.pop('password', None)
+        instance = self.Meta.model(**validated_data)
+        if password is not None:
+            instance.password = make_password(password)
+        instance.save()
+        return instance
+
 
 class childSerializer(serializers.ModelSerializer):
     class Meta:

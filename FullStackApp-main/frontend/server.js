@@ -14,17 +14,24 @@ const io = socketIo(server, {
 
 const PORT = process.env.PORT || 4000;
 
+let userCount = 0;
+
 io.on('connection', (socket) => {
-    console.log('Usuario conectado');
+    userCount++;
+    socket.username = `Usuario ${userCount}`;
+    console.log(`${socket.username} conectado`);
 
     socket.on('disconnect', () => {
-        console.log('Usuario desconectado');
+        console.log(`${socket.username} desconectado`);
+        userCount--;
     });
 
     socket.on('chat message', (msg) => {
-        console.log(`Mensaje recibido: ${msg}`);
-        io.emit('chat message', msg);
+        console.log(`Mensaje recibido de ${socket.username}: ${msg}`);
+        io.emit('chat message', `${socket.username}: ${msg}`);
     });
+
+    socket.emit('username', socket.username);
 });
 
 server.listen(PORT, () => {
